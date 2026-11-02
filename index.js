@@ -14,19 +14,32 @@ const {
 } = require('discord.js');
 const fs = require('fs').promises;
 const path = require('path');
+const http = require('http'); // 🌐 เพิ่มไลบรารี HTTP สำหรับสร้าง Server ให้ Render ตรวจจับพอร์ต
 const TopupSystem = require('./topup/topup_trueWallet');
 const Logger = require('./logger');
 
 // ==========================================
 // ⚙️ CONFIGURATION & CONSTANTS
 // ==========================================
-const TOKEN = 'MTU2NjU1NjgzNjMzMTc5MDM2Ng.G4XKrP.u6_yuce2WS21lf05c6Qjiqjdq7XA98r5c_YltA';
+const TOKEN = 'MTU2NjU1NjgzNjMzMTc5MDM2Ng.GlweEi.em6XIValAi3AFNzNEMP-0HsMJp3W1Dnrowisl0';
 const ADMIN_IDS = ['1511705591096279040'];
 const LOG_TOPUP_CHANNEL_ID = '1520969669035692102'; // ห้อง Log เติมเงิน & จัดการยอดเงิน
 const LOG_BUY_CHANNEL_ID = '1520970061894914088';   // ห้อง Log ซื้อของ
 const PHONE = '0816382327';
 
 const IMG_BANNER = 'https://cdn.discordapp.com/attachments/1373550875435470869/1425151020786516068/animated-line-image-0379.gif?ex=68e68ad1&is=68e53951&hm=ed1b9b92dc843c844f8c09e71bb8921355678513012342c17b5b4de046972465&';
+
+// ==========================================
+// 🌐 HTTP SERVER (FOR RENDER PORT BINDING)
+// ==========================================
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running and server is active!');
+});
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`[SERVER] 🌐 HTTP Server is listening on port ${PORT}`);
+});
 
 // ==========================================
 // 🤖 CLIENT & SYSTEM SETUP
