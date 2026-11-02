@@ -20,7 +20,7 @@ const Logger = require('./logger');
 // ==========================================
 // ⚙️ CONFIGURATION & CONSTANTS
 // ==========================================
-const TOKEN = 'MTU2NjU1NjgzNjMzMTc5MDM2Ng.G84A3z.4DwZFL17yS37eKbvrBXUNm_PFXdS-6yLQrVQX4';
+const TOKEN = 'MTU2NjU1NjgzNjMzMTc5MDM2Ng.G4XKrP.u6_yuce2WS21lf05c6Qjiqjdq7XA98r5c_YltA';
 const ADMIN_IDS = ['1511705591096279040'];
 const LOG_TOPUP_CHANNEL_ID = '1520969669035692102'; // ห้อง Log เติมเงิน & จัดการยอดเงิน
 const LOG_BUY_CHANNEL_ID = '1520970061894914088';   // ห้อง Log ซื้อของ
